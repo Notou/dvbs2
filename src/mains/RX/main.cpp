@@ -15,7 +15,7 @@ using namespace aff3ct::module;
 // global parameters
 constexpr bool enable_logs = false;
 #ifdef MULTI_THREADED
-constexpr bool thread_pinnig = true;
+constexpr bool thread_pinnig = false;
 constexpr bool active_waiting = false;
 #endif /* MULTI_THREADED */
 
@@ -258,7 +258,7 @@ int main(int argc, char** argv)
 	    { /* no exclusions in this stage */ } ),
 	};
 	// number of threads per stages
-	const std::vector<size_t> n_threads_per_stages = { 1, 1, 1, 1, 1, 1, 28, 1 };
+	const std::vector<size_t> n_threads_per_stages = { 1, 1, 1, 1, 1, 1, 4, 1 };
 	// synchronization buffer size between stages
 	const std::vector<size_t> buffer_sizes(sep_stages.size() -1, 1);
 	// type of waiting between stages (true = active, false = passive)
