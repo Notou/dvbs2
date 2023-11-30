@@ -1,5 +1,8 @@
 FROM m1mbert/cxlb-gnuradio-3.10:1.2
 
+LABEL org.opencontainers.image.source=https://github.com/Notou/dvbs2
+LABEL org.opencontainers.image.description="Image intended to run the DVB-S2 chain in CorteXlab"
+
 SHELL [ "/bin/bash", "-lc"  ]
 RUN git clone -b cxlb https://github.com/Notou/dvbs2.git
 RUN cd dvbs2 && git submodule update --init --recursive --remote
